@@ -19,14 +19,12 @@ def function():
 
 if __name__ == "__main__":
     time_start = time.time()
-    i = 0
     number_extinct = 0
     iterations = 10000
-    while i <= iterations:
+    for i in range(iterations):
         extinct = function()
         if extinct == 0:
             number_extinct += 1
-        i += 1
     time_ended = round(time.time() - time_start, 2)
     probability = number_extinct/iterations
     error = round(abs(((probability - 0.414)/0.414))*100, 2)
